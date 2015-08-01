@@ -49,7 +49,7 @@ var button = new Button();
   background-color: $red
 ```
 
-You can keep a code to a minimum and the scope is sage.
+You can keep a code to a minimum and the scope is safe.
 
 ## Instances can have own child elements
 
