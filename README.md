@@ -71,8 +71,8 @@ You can keep a code to a minimum and the scope is safe.
 
   &__counter
     position: absolute
-    top: 0.5em
-    right: 0.5em
+    top: -0.5em
+    right: -0.5em
     min-width: 1em
     height: 1em
     border-radius: 1em
