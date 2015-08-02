@@ -1,6 +1,6 @@
 # Objective.css (a.k.a. TIE)
 
-> Object Oriented CSS Naming Conventions
+> Object Oriented CSS Naming Conventions. Unlike OOCSS, this is a real thing.
 
 ## Super class must begin with capital letters
 
