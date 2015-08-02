@@ -82,9 +82,9 @@ You can keep a code to a minimum and the scope is safe.
 
 ## The difference from BEM
 
-- We don't use `.block__element__element` even if we have a grandchild element.
-- Insted of use the identical className to offspring which is enough to organize.
-- The format is `type--identifier` or `type--identifier__element`. So maybe TIE?
+- We don't use `.block__element__element` format even if we have a grandchild element.
+- Use the recognizable className to offspring which is enough to organize.
+- The format will be `type--identifier__element`. So maybe TIE?
 
 
 ## Case of super class has child element
