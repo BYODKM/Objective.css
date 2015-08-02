@@ -216,3 +216,7 @@ That's it, folks.
 Thank you for reading this to the end.
 
 Hope you like it as much as we do.
+
+## License
+
+Public Domain
