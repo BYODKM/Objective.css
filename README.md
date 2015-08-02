@@ -203,7 +203,7 @@ Use parameters as a bridge.
       display: none
 ```
 
-Code like this; you don't need to know anything about super class child elements.
+Code like this; you don't need to know anything about inside of super class.
 
 So this is how Object Oriented CSS works.
 
