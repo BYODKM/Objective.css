@@ -1,4 +1,4 @@
-# Objective.css (a.k.a. TIE)
+# Objective.css
 
 > Object Oriented CSS Naming Conventions. Unlike OOCSS, this is a real thing.
 
