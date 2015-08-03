@@ -21,7 +21,7 @@
   vertical-align: middle
 ```
 
-This idea is based on this:
+The idea is based on this:
 
 ```js
 var button = new Button();
