@@ -87,7 +87,7 @@ You can keep a code to a minimum and the scope is safe.
 - The format will be `type--identifier__element`. So maybe TIE?
 
 
-## Case of super class has child element
+## A case of super class has child element
 
 ```html
 <div class="Popup">
