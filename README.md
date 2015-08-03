@@ -21,7 +21,7 @@
   vertical-align: middle
 ```
 
-This idea is based on like this:
+This idea is based on this:
 
 ```js
 var button = new Button();
@@ -149,7 +149,7 @@ You can keep a code to a minimum and the scope is safe.
     text-align: center
 ```
 
-Same as the `.Button` so far.
+The same as the `.Button` so far.
 
 ## How to override super class child elements
 
