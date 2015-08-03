@@ -102,7 +102,7 @@ You can keep a code to a minimum and the scope is safe.
 </div >
 ```
 
-### Super class
+### Super class properties
 
 ```sass
 .Popup
