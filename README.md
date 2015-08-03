@@ -84,7 +84,7 @@ You can keep a code to a minimum and the scope is safe.
 
 - We don't use `.block__element__element` format even if we have a grandchild element.
 - Use the recognizable className to offspring which is enough to organize.
-- The format will be `type--identifier__element`. So maybe TIE?
+- The format will be `.type--identifier__element`. So maybe TIE?
 
 
 ## A case of super class has child element
