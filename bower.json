@@ -1,0 +1,11 @@
+{
+  "name": "Objective.css",
+  "description": "True Object Oriented CSS Style Guide",
+  "main": "README.md",
+  "version": "1.0.0",
+  "authors": [
+    "Tomohiro Kasuga <tk@internets.co.jp>"
+  ],
+  "license": "Public Domain",
+  "homepage": "https://github.com/BYODKM/Objective.css"
+}
