@@ -1,6 +1,6 @@
-# Objective.css
+# True Object Oriented CSS Style Guide
 
-> Object Oriented CSS Naming Conventions. Unlike OOCSS, this is a real thing.
+> Unlike OOCSS, this is a real thing.
 
 ## Super class must begin with capital letters
 
