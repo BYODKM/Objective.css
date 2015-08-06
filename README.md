@@ -1,4 +1,4 @@
-# True Object Oriented CSS Style Guide
+# True Object Oriented CSS Code Guide
 
 > Unlike OOCSS, this is a real thing.
 
