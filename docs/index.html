@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"/><title>Objective.css Style Guide</title><style>@charset "utf-8";
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url("//themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff") format("woff");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Open Sans Italic"), local("OpenSans-Italic"), url("//themes.googleusercontent.com/static/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBrrIa-7acMAeDBVuclsi6Gc.woff") format("woff");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url("//themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff") format("woff");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: local("Open Sans Semibold Italic"), local("OpenSans-SemiboldItalic"), url("//themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxuw_rQOTGi-AJs5XCWaKIhU.woff") format("woff");
+}
+.Page {
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.Page .Page__header {
+  background-color: #222;
+  overflow: hidden;
+}
+.Page .Page__header-title {
+  margin: 0.5em auto;
+  padding-left: 1rem;
+  max-width: 800px;
+  font-size: 2em;
+  color: #fff;
+}
+.Page .Page__footer {
+  color: #fff;
+  background-color: #222;
+  overflow: hidden;
+}
+.Page .Page__footer-note {
+  margin: 1em auto;
+  max-width: 640px;
+  text-align: center;
+  text-indent: -1px;
+  letter-spacing: 1px;
+}
+.Page .Page__footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+.Doc {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  max-width: 640px;
+}
+.Doc .Doc__name {
+  margin: 2rem 0 0;
+  color: #c0c0c0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+}
+.Doc .Doc__anchor {
+  position: relative;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.Doc .Doc__anchor:before {
+  content: '#';
+  position: absolute;
+  top: 0;
+  left: -0.8em;
+  display: inline-block;
+  width: 0.8em;
+  color: transparent;
+}
+.Doc .Doc__anchor:hover:before {
+  color: currentColor;
+}
+.Doc .Doc__pre {
+  margin: 1rem 0 0;
+  padding: 0.9rem 0 1.1rem 1rem;
+  border-radius: 4px 4px 0 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  color: #fff;
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 0.813rem;
+  background-color: #222;
+}
+.Doc .Doc__code {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 1em;
+}
+.Doc .Doc__test {
+  margin: 0 0 2rem;
+  padding: 1rem;
+  border: 1px solid #222;
+  border-radius: 0 0 4px 4px;
+}
+.Doc .Doc__test p:first-of-type {
+  margin-top: 0;
+}
+.Doc .Doc__test p:last-of-type {
+  margin-bottom: 0;
+}
+.Button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #666;
+  border-radius: 5px;
+  padding: 0 0.75em;
+  margin: 0;
+  height: 2em;
+  overflow: visible;
+  color: #333;
+  font: inherit;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  text-transform: none;
+  line-height: 1.9;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.Button:active,
+.Button:hover,
+.Button:focus {
+  outline: 0;
+}
+.Button[disabled] {
+  cursor: default;
+}
+.Button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.button--submit {
+  color: #fff;
+  background-color: #008000;
+  border-color: transparent;
+}
+.button--cancel {
+  color: #fff;
+  background-color: #f00;
+  border-color: transparent;
+}
+</style><script>(function() {
+  window.include = function(str) {
+    var a, check, code, h1, http, id, jade, node, path, pre;
+    if (!window.XMLHttpRequest) {
+      return;
+    }
+    if (typeof str !== 'string') {
+      return;
+    }
+    path = str + '.jade';
+    id = path.replace(/(\.\/lib\/|\/test.jade)/g, '');
+    node = document.querySelector('#' + id);
+    if (!node) {
+      return;
+    }
+    pre = document.createElement('pre');
+    pre.className = 'Doc__pre';
+    code = document.createElement('code');
+    code.className = 'Doc__code';
+    h1 = document.createElement('h1');
+    h1.className = 'Doc__name';
+    a = document.createElement('a');
+    a.className = 'Doc__anchor';
+    a.setAttribute('href', '#' + id);
+    a.innerHTML = '.' + id;
+    jade = node.querySelector('.Doc__test');
+    h1.appendChild(a);
+    pre.appendChild(code);
+    node.insertBefore(h1, jade);
+    node.insertBefore(pre, jade);
+    code = node.querySelector('pre code');
+    http = new XMLHttpRequest();
+    check = function() {
+      if (http.readyState === 4 && http.status === 200) {
+        code.innerHTML = http.responseText;
+      }
+    };
+    http.addEventListener('readystatechange', check, false);
+    http.open('GET', path, true);
+    http.send(null);
+  };
+
+}).call(this);
+</script></head><body class="Page"><header class="Page__header"><h1 class="Page__header-title">Objective.css Style Guide</h1></header><section id="Button" class="Doc"><script>include('./lib/Button/test');</script><div class="Doc__test"><p><button type="button" class="Button">.Button</button></p><p><button type="button" class="Button button--submit">.button--submit</button></p><p><button type="button" class="Button button--cancel">.button--cancel</button></p></div></section><section id="Table" class="Doc"><script>include('./lib/Table/test');</script><div class="Doc__test"></div></section><footer class="Page__footer"><p class="Page__footer-note"><a href="https://github.com/BYODKM/Objective.css" target="_blank" class="Page__footer-link">github.com/BYODKM/Objective.css</a></p></footer></body></html>

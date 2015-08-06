@@ -1,0 +1,15 @@
+include lib
+
+doctype
+html(lang="ja")
+  +head
+    style
+      :stylus
+        @import "./lib";
+        @import "./lib/Button";
+        @import "./lib/Table";
+  +body
+    +test("Button")
+      include ./lib/Button/test
+    +test("Table")
+      include ./lib/Table/test

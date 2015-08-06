@@ -66,10 +66,10 @@ You can keep a code to a minimum and the scope is safe.
   color: white
   background-color: $green
 
-  &__icon
+  & &__icon
     @include icon(upload)
 
-  &__counter
+  & &__counter
     position: absolute
     top: -0.5em
     right: -0.5em
@@ -84,7 +84,7 @@ You can keep a code to a minimum and the scope is safe.
 
 - We don't use `.block__element__element` format even if we have a grandchild element.
 - Use the recognizable className to offspring which is enough to organize.
-- The format will be `.type--identifier__element`. So maybe TIE?
+- The format will be `.type--identifier__element`. So maybe _TIE?_
 
 
 ## A case of super class has child element
@@ -107,7 +107,7 @@ You can keep a code to a minimum and the scope is safe.
 ```sass
 .Popup
 
-  &__window
+  & &__window
     width: 300px
     position: fixed
     top: 33%
@@ -116,10 +116,10 @@ You can keep a code to a minimum and the scope is safe.
     background-color: white
     border-radius: 8px
 
-  &__message
+  & &__message
     padding: 1em
 
-  &__action
+  & &__action
     border-top: 1px solid $gray
     text-align: center
 
@@ -145,7 +145,7 @@ You can keep a code to a minimum and the scope is safe.
 ```sass
 .popup--confirm
 
-  &__message
+  & &__message
     text-align: center
 ```
 
