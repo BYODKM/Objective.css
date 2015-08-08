@@ -4,13 +4,13 @@
 
 ## 0. What does "Object Oriented" mean?
 
-"Object Oriented" is one of most important concept in IT industry. Almost every major programming language including JavaScript supports object-oriented methodology. They have "Type" and "Class" to separate from "Instance" which is the _object_ produced from a class.
+"Object Oriented" is one of most important concept in IT industry. Almost every major programming language (including JavaScript) supports object-oriented methodology. They have "Type" and "Class" to separate from "Instance" which is the _object_ produced from a class.
 
 By separating instances from classes, you can keep your programs safe and functional in long term. You can fix a class, modify a instance, extends both in any way you want.
 
-These iconic features that they have are not seen in CSS. Even after [Nicole Sullivan](https://twitter.com/stubbornella) introduced the [OOCSS](http://www.slideshare.net/stubbornella/object-oriented-css) in 2008.
+Those iconic features that they have are not seen in CSS since its beginning. Even after [Nicole Sullivan](https://twitter.com/stubbornella) introduced the [OOCSS](http://www.slideshare.net/stubbornella/object-oriented-css) in 2008.
 
-Until today.
+Until now.
 
 So, let's get started!
 
@@ -63,7 +63,7 @@ Give a name of instance.
   background-color: $red
 ```
 
-You can keep code clean and the scope small.
+You can keep code clean and small.
 
 ## 4. Instances can have own child elements
 
@@ -75,7 +75,7 @@ You can keep code clean and the scope small.
 </button>
 ```
 
-You should keep in mind that these elements are belong to instance not a parent. Which means they are not inherited.
+Note that these elements are belong to instance not a parent. Which means they are not inherited.
 
 ```sass
 .button--upload
@@ -87,8 +87,9 @@ You should keep in mind that these elements are belong to instance not a parent.
 
   & &__counter
     position: absolute
-    top: -0.75em
-    right: -0.75em
+    top: -0.75rem
+    right: -0.75rem
+    padding: 0.1em
     min-width: 1em
     height: 1em
     border-radius: 0.5em
@@ -102,20 +103,20 @@ You should keep in mind that these elements are belong to instance not a parent.
 
 ## 5. The difference from [BEM](https://en.bem.info/)
 
-- The separators are same meaning.
+- The `--` and `__` separators are same meaning.
 - We don't use `.block__element__element` format even if we have a grandchild element.
 - Giving a recognizable class name to offspring is enough to organize.
 - The format will be `.type--identifier__element`. So maybe _TIE?_
 
 ## 6. The difference from OOCSS
 
-OOCSS doesn't support key concepts of object oriented programming.
+OOCSS doesn't support key concepts which object oriented programming has.
 
 - Encapsulation
 - Inheritance
 - Messaging
 
-The name is [metaphor](https://github.com/stubbornella/oocss/wiki/FAQ).
+The OO name is _[metaphor](https://github.com/stubbornella/oocss/wiki/FAQ)_.
 
 ## 7. A case of parents class have child elements
 
@@ -132,7 +133,7 @@ The name is [metaphor](https://github.com/stubbornella/oocss/wiki/FAQ).
 </div >
 ```
 
-These elements are inherited, or could be inherited by the type.
+These elements are inherited, or will be inherited in your markup.
 
 ### 7.1 Parent class properties
 
@@ -149,10 +150,10 @@ These elements are inherited, or could be inherited by the type.
     background-color: white
 
   & &__message
-    padding: 1em
+    padding: 1rem
 
   & &__action
-    padding: 1em
+    padding: 0.5rem
     border-top: 1px solid $gray
     text-align: center
 ```
@@ -203,11 +204,11 @@ The same as the `.Button` so far.
 ```sass
 .popup--confirm
 
-  .Popup__action // Manipulated parent class's child element from a instance
+  .Popup__action
     display: none
 ```
 
-This could be trouble when the inside of parent class has been changed.
+The code above is manipulated parent class's child element from a instance. It could be trouble when the inside of parent class has been changed. You shouldn't do that.
 
 ### 8.2 Right way
 
@@ -229,25 +230,25 @@ Use parameters as a bridge.
 ```sass
 .Popup
 
-  &.param--auto-close // Handling own child elements
+  &.param--auto-close
 
     .Popup__action
       display: none
 ```
 
-Code like this; you don't need to know anything about inside of parent class.
-
-So this is how Object Oriented CSS works.
-
-- Encapsulation
-- Inheritance
-- Messaging
-
-Also, this is a very good practice for HTML components.
-
-## 9. Thanks
+Code like this, the parent class is handling own child element. Instances don't need to know anything about inside of parent class.
 
 That's it, folks.
+
+This is how Object Oriented CSS works.
+
+- ✔ Encapsulation
+- ✔ Inheritance
+- ✔ Messaging
+
+This Objective.css methodology is also a very good practice for HTML components.
+
+## 9. Thanks
 
 Thank you for reading this to the end.
 
