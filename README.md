@@ -4,9 +4,9 @@
 
 ## 0. What does "Object Oriented" mean?
 
-"Object Oriented" is one of most important concept in IT industry. Almost every major programming language (including JavaScript) supports object-oriented methodology. They have "Type" and "Class" to separate from "Instance" which is the _object_ produced from a class.
+"Object Oriented" is one of the most important concept in IT industry. Almost every major programming language (including JavaScript) supports object-oriented methodology. They have "Type" and "Class" to separate from "Instance" which is the _object_ produced from the class.
 
-By separating instances from classes, you can keep your programs safe and functional in long term. You can fix a class, modify a instance, extends both in any way you want.
+By separating instances from classes, you can keep your program is safe, functional and maintainable in long term. You can fix a class, modify a instance, extend both in any way you want.
 
 Those iconic features that they have are not seen in CSS since its beginning. Even after [Nicole Sullivan](https://twitter.com/stubbornella) introduced the [OOCSS](http://www.slideshare.net/stubbornella/object-oriented-css) in 2008.
 
@@ -14,7 +14,7 @@ Until now.
 
 So, let's get started!
 
-## 1. Parent class name should begin with capital letters
+## 1. Parent class names should begin with capital letters
 
 ```sass
 .Button
@@ -33,7 +33,7 @@ So, let's get started!
   vertical-align: middle
 ```
 
-It's looks odd. But also it's a quite popular way in other languages. Like JavaScript:
+It looks odd. But also it's a quite popular expression in other languages. Like JavaScript:
 
 ```js
 var button = new Button();
@@ -49,7 +49,7 @@ By doing this, you can distinguish a parent class from instances.
 <a href="#" class="Button button--cancel">Cancel</a>
 ```
 
-Give a name of instance.
+Let's give a name of instance.
 
 ## 3. Add instance properties
 
@@ -57,13 +57,15 @@ Give a name of instance.
 .button--upload
   color: white
   background-color: $green
+  border 0
 
 .button--cancel
   color: white
   background-color: $red
+  border 0
 ```
 
-You can keep code clean and small.
+Thanks to class did heavy lifting stuff, instance properties are small and clean.
 
 ## 4. Instances can have own child elements
 
@@ -74,8 +76,6 @@ You can keep code clean and small.
   Upload
 </button>
 ```
-
-Note that these elements are belong to instance not a parent. Which means they are not inherited.
 
 ```sass
 .button--upload
@@ -99,7 +99,9 @@ Note that these elements are belong to instance not a parent. Which means they a
     background-color: $red
 ```
 
-`& &__` isn't a typo. It creates safety scope.
+The `& &__` isn't a typo. It creates safety scope.
+
+Note that these elements are belong to instance not a parent class. Which means they would not inherited.
 
 ## 5. The difference from [BEM](https://en.bem.info/)
 
@@ -116,9 +118,9 @@ OOCSS doesn't support key concepts which object oriented programming has.
 - Inheritance
 - Messaging
 
-The OO name is _[metaphor](https://github.com/stubbornella/oocss/wiki/FAQ)_.
+The name of "OO" is _[metaphor](https://github.com/stubbornella/oocss/wiki/FAQ)_.
 
-## 7. A case of parents class have child elements
+## 7. A case of parent classes have child elements
 
 ```html
 <div class="Popup">
@@ -133,7 +135,7 @@ The OO name is _[metaphor](https://github.com/stubbornella/oocss/wiki/FAQ)_.
 </div >
 ```
 
-These elements are inherited, or will be inherited in your markup.
+These elements will be inherited in your markup.
 
 ### 7.1 Parent class properties
 
@@ -164,7 +166,7 @@ These elements are inherited, or will be inherited in your markup.
 <div class="Popup popup--confirm">
   <div class="Popup__window">
     <div class="Popup__message">
-      <p class="popup--confirm__message">Send a E-mail message for you.</p>
+      <p class="popup--confirm__message">Send a message for you.</p>
     </div>
     <div class="Popup__action">
       <button class="Button button--close-popup" type="button">Close</button>
@@ -192,7 +194,7 @@ The same as the `.Button` so far.
 <div class="Popup popup--confirm">
   <div class="Popup__window">
     <div class="Popup__message">
-      <p class="popup--confirm__message">Send a E-mail message for you.</p>
+      <p class="popup--confirm__message">Send a message for you.</p>
     </div>
     <div class="Popup__action">
       <!-- This case, no buttons. -->
@@ -208,7 +210,7 @@ The same as the `.Button` so far.
     display: none
 ```
 
-The code above is manipulated parent class's child element from a instance. It could be trouble when the inside of parent class has been changed. You shouldn't do that.
+The code above is manipulating parent class's child element from a instance. It could be trouble when the inside of parent class has been changed. You would't want that.
 
 ### 8.2 Right way
 
@@ -218,7 +220,7 @@ Use parameters as a bridge.
 <div class="Popup popup--confirm param--auto-close"><!-- Added parameters here -->
   <div class="Popup__window">
     <div class="Popup__message">
-      <p class="popup--confirm__message">Send a E-mail message for you.</p>
+      <p class="popup--confirm__message">Send a message for you.</p>
     </div>
     <div class="Popup__action">
       <!-- This case, no buttons. -->
@@ -236,21 +238,21 @@ Use parameters as a bridge.
       display: none
 ```
 
-Code like this, the parent class is handling own child element. Instances don't need to know anything about inside of parent class.
+Code like this, the parent class is handling own child element. Instances don't need to know anything about inside of the parent class.
 
-That's it, folks.
+That's it! This is how _True_ Object Oriented CSS works.
 
-This is how Object Oriented CSS works.
+Therefore, finally CSS has checked the wish list.
 
-- ✔ Encapsulation
-- ✔ Inheritance
-- ✔ Messaging
-
-This Objective.css methodology is also a very good practice for HTML components.
+- Encapsulation ✔
+- Inheritance ✔
+- Messaging ✔
 
 ## 9. Thanks
 
 Thank you for reading this to the end.
+
+If you have any question, we can discuss in [here](https://github.com/BYODKM/Objective.css/issues).
 
 Hope you like it as much as we do.
 
