@@ -102,16 +102,16 @@
   font-family: Menlo, Monaco, "Courier New", monospace;
   font-size: 1em;
 }
-.Doc .Doc__test {
+.Doc .Doc__jade {
   margin: 0 0 2rem;
   padding: 1rem;
   border: 1px solid #222;
   border-radius: 0 0 4px 4px;
 }
-.Doc .Doc__test p:first-of-type {
+.Doc .Doc__jade p:first-of-type {
   margin-top: 0;
 }
-.Doc .Doc__test p:last-of-type {
+.Doc .Doc__jade p:last-of-type {
   margin-bottom: 0;
 }
 .Button {
@@ -171,7 +171,7 @@
 }
 </style><script>(function() {
   window.include = function(str) {
-    var a, check, code, h1, http, id, jade, node, path, pre;
+    var a, check, code, h1, http, id, jade, path, pre, scope;
     if (!window.XMLHttpRequest) {
       return;
     }
@@ -180,8 +180,8 @@
     }
     path = str + '.jade';
     id = path.replace(/(\.\/lib\/|\/test.jade)/g, '');
-    node = document.querySelector('#' + id);
-    if (!node) {
+    scope = document.querySelector('#' + id);
+    if (!scope) {
       return;
     }
     pre = document.createElement('pre');
@@ -194,12 +194,12 @@
     a.className = 'Doc__anchor';
     a.setAttribute('href', '#' + id);
     a.innerHTML = '.' + id;
-    jade = node.querySelector('.Doc__test');
+    jade = scope.querySelector('.Doc__jade');
     h1.appendChild(a);
     pre.appendChild(code);
-    node.insertBefore(h1, jade);
-    node.insertBefore(pre, jade);
-    code = node.querySelector('pre code');
+    scope.insertBefore(h1, jade);
+    scope.insertBefore(pre, jade);
+    code = scope.querySelector('pre code');
     http = new XMLHttpRequest();
     check = function() {
       if (http.readyState === 4 && http.status === 200) {
@@ -212,4 +212,4 @@
   };
 
 }).call(this);
-</script></head><body class="Page"><header class="Page__header"><h1 class="Page__header-title">Objective.css Style Guide</h1></header><section id="Button" class="Doc"><script>include('./lib/Button/test');</script><div class="Doc__test"><p><button type="button" class="Button">.Button</button></p><p><button type="button" class="Button button--submit">.button--submit</button></p><p><button type="button" class="Button button--cancel">.button--cancel</button></p></div></section><section id="Table" class="Doc"><script>include('./lib/Table/test');</script><div class="Doc__test"></div></section><footer class="Page__footer"><p class="Page__footer-note"><a href="https://github.com/BYODKM/Objective.css" target="_blank" class="Page__footer-link">github.com/BYODKM/Objective.css</a></p></footer></body></html>
+</script></head><body class="Page"><header class="Page__header"><h1 class="Page__header-title">Objective.css Style Guide</h1></header><section id="Button" class="Doc"><script>include('./lib/Button/test');</script><div class="Doc__jade"><p><button type="button" class="Button">.Button</button></p><p><button type="button" class="Button button--submit">.button--submit</button></p><p><button type="button" class="Button button--cancel">.button--cancel</button></p></div></section><section id="Table" class="Doc"><script>include('./lib/Table/test');</script><div class="Doc__jade"></div></section><footer class="Page__footer"><p class="Page__footer-note"><a href="https://github.com/BYODKM/Objective.css" target="_blank" class="Page__footer-link">github.com/BYODKM/Objective.css</a></p></footer></body></html>

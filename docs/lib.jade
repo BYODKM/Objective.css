@@ -9,12 +9,12 @@ mixin body
         a(href="https://github.com/BYODKM/Objective.css" target="_blank").Page__footer-link
           | github.com/BYODKM/Objective.css
 
-mixin test(name)
+mixin test(str)
 
-  section.Doc(id = name)
+  section.Doc(id = str)
     script.
-      include('./lib/#{name}/test');
-    .Doc__test
+      include('./lib/#{str}/test');
+    .Doc__jade
       block
 
 mixin head
@@ -33,8 +33,8 @@ mixin head
           path = str + '.jade'
           id = path.replace(/(\.\/lib\/|\/test.jade)/g, '')
 
-          node = document.querySelector('#' + id)
-          if (!node) then return
+          scope = document.querySelector('#' + id)
+          if (!scope) then return
 
           pre = document.createElement('pre')
           pre.className = 'Doc__pre'
@@ -50,15 +50,15 @@ mixin head
           a.setAttribute('href', '#' + id)
           a.innerHTML = '.' + id
 
-          jade = node.querySelector('.Doc__test')
+          jade = scope.querySelector('.Doc__jade')
 
           h1.appendChild(a)
           pre.appendChild(code)
 
-          node.insertBefore(h1, jade)
-          node.insertBefore(pre, jade)
+          scope.insertBefore(h1, jade)
+          scope.insertBefore(pre, jade)
 
-          code = node.querySelector('pre code')
+          code = scope.querySelector('pre code')
 
           http = new XMLHttpRequest()
           check = ->

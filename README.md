@@ -4,17 +4,17 @@
 
 ## 0. What does "Object Oriented" mean?
 
-"Object Oriented" is one of the most important concept in IT industry. Almost every major programming language (including JavaScript) supports object-oriented methodology. They have "Type" and "Class" to separate from "Instance" which is the _object_ produced from the class.
+"Object Oriented" is one of the most important concept in IT industry. Almost every major programming language (including JavaScript) supports object-oriented methodology. They have "Type" and "Class" to separate from "Instance" which is the _object_ produced by the class.
 
-By separating instances from classes, you can keep your program is safe, functional and maintainable in long term. You can fix a class, modify a instance, extend both in any way you want.
+By separating instances from the class, you can keep your program is safe, functional and maintainable in long term. You can fix a class, modify a instance, extend them both in any way you want.
 
 Those iconic features that they have are not seen in CSS since its beginning. Even after [Nicole Sullivan](https://twitter.com/stubbornella) introduced the [OOCSS](http://www.slideshare.net/stubbornella/object-oriented-css) in 2008.
 
-Until now.
+But, until now.
 
 So, let's get started!
 
-## 1. Parent class names should begin with capital letters
+## 1. Parent class names will begin with a capital letter
 
 ```sass
 .Button
@@ -25,7 +25,7 @@ So, let's get started!
   border: 1px solid
   border-radius: 4px
   height: 2em
-  padding: 0 0.5em
+  padding: 0 0.75em
   color: inherit
   background-color: white
   text-decoration: none
@@ -33,7 +33,7 @@ So, let's get started!
   vertical-align: middle
 ```
 
-It looks odd. But also it's a quite popular expression in other languages. Like JavaScript:
+It looks odd. But also it's a quite popular expression in other languages. Like JavaScript does:
 
 ```js
 var button = new Button();
@@ -49,23 +49,23 @@ By doing this, you can distinguish a parent class from instances.
 <a href="#" class="Button button--cancel">Cancel</a>
 ```
 
-Let's give a name of instance.
+If the parent class name is `Button`, the instance name will starts with 'button--'.
 
 ## 3. Add instance properties
 
 ```sass
 .button--upload
   color: white
+  border-color transparent
   background-color: $green
-  border 0
 
 .button--cancel
   color: white
+  border-color transparent
   background-color: $red
-  border 0
 ```
 
-Thanks to class did heavy lifting stuff, instance properties are small and clean.
+Thanks to the class did heavy lifting stuff, instance properties are clean and small.
 
 ## 4. Instances can have own child elements
 
@@ -94,33 +94,33 @@ Thanks to class did heavy lifting stuff, instance properties are small and clean
     height: 1em
     border-radius: 0.5em
     overflow: hidden
-    font-size: 0.8em
+    font-size: 0.75em
     line-height: 1
     background-color: $red
 ```
 
 The `& &__` isn't a typo. It creates safety scope.
 
-Note that these elements are belong to instance not a parent class. Which means they would not inherited.
+Note: these elements are belong to instance not a parent class. Which means they would not be inherited.
 
 ## 5. The difference from [BEM](https://en.bem.info/)
 
-- The `--` and `__` separators are same meaning.
+- The meaning of `--` and `__` separators are same.
 - We don't use `.block__element__element` format even if we have a grandchild element.
 - Giving a recognizable class name to offspring is enough to organize.
 - The format will be `.type--identifier__element`. So maybe _TIE?_
 
 ## 6. The difference from OOCSS
 
-OOCSS doesn't support key concepts which object oriented programming has.
+OOCSS doesn't support key concepts which every object oriented programming language has.
 
 - Encapsulation
 - Inheritance
 - Messaging
 
-The name of "OO" is _[metaphor](https://github.com/stubbornella/oocss/wiki/FAQ)_.
+The "OO" is _[metaphor](https://github.com/stubbornella/oocss/wiki/FAQ)_.
 
-## 7. A case of parent classes have child elements
+## 7. A case of parent class have child elements
 
 ```html
 <div class="Popup">
@@ -135,7 +135,7 @@ The name of "OO" is _[metaphor](https://github.com/stubbornella/oocss/wiki/FAQ)_
 </div >
 ```
 
-These elements will be inherited in your markup.
+These child elements are part of structure. It will be inherited in your markup.
 
 ### 7.1 Parent class properties
 
@@ -240,9 +240,9 @@ Use parameters as a bridge.
 
 Code like this, the parent class is handling own child element. Instances don't need to know anything about inside of the parent class.
 
-That's it! This is how _True_ Object Oriented CSS works.
+This is it! This is how Object Oriented CSS works.
 
-Therefore, finally CSS has checked the wish list.
+Therefore, finally CSS has completed the check list.
 
 - Encapsulation ✔
 - Inheritance ✔

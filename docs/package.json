@@ -1,6 +1,6 @@
 {
   "name": "Objective.css",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "True Object Oriented CSS Style Guide",
   "author": "Tomohiro Kasuga <tk@internets.co.jp>",
   "license": "Public Domain",
@@ -11,7 +11,6 @@
     "gulp-jade": "~1.1.0",
     "gulp-notify": "~2.2.0",
     "gulp-plumber": "~1.0.1",
-    "gulp-stylus": "~2.0.6",
     "gulp-webserver": "~0.9.1",
     "jstransformer-coffee-script": "~1.0.0",
     "jstransformer-stylus": "~1.0.0",
