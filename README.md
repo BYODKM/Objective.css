@@ -49,19 +49,19 @@ By doing this, you can distinguish a parent class from instances.
 <a href="#" class="Button button--cancel">Cancel</a>
 ```
 
-If the parent class name is `Button`, the instance name will starts with 'button--'.
+If the parent class name is `Button`, the instance name will starts with `button--`.
 
 ## 3. Add instance properties
 
 ```sass
 .button--upload
   color: white
-  border-color transparent
+  border-color: transparent
   background-color: $green
 
 .button--cancel
   color: white
-  border-color transparent
+  border-color: transparent
   background-color: $red
 ```
 
