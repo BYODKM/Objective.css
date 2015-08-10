@@ -80,6 +80,7 @@ Thanks to the class did heavy lifting stuff, instance properties are clean and s
 ```sass
 .button--upload
   color: white
+  border-color: transparent
   background-color: $green
 
   & &__icon
