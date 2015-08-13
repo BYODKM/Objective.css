@@ -12,6 +12,7 @@
 .Page
   position relative
   margin 0
+  color #222
   font-family "Helvetica Neue", Helvetica, Arial, sans-serif
   line-height 1.25
   -webkit-text-size-adjust 100%
@@ -36,40 +37,12 @@
     font-size rem(30px)
 
   & &__expand-button
-    appearance none
     position absolute
     top 1.2rem
     right 1rem
-    display inline-block
-    box-sizing border-box
-    border 1px solid white
-    border-radius 5px
-    padding 0 0.75em
-    margin 0
-    height 2em
-    overflow visible
+    border-color white
     color white
-    font inherit
-    font-size rem(15px)
     background none
-    -webkit-font-smoothing antialiased
-    -moz-osx-font-smoothing grayscale
-    text-decoration none
-    text-transform none
-    line-height 1.9
-    vertical-align middle
-    white-space nowrap
-    user-select none
-    cursor pointer
-
-    &:active
-    &:hover
-    &:focus
-      outline 0
-
-    &::-moz-focus-inner
-      padding 0
-      border 0
 
     @media only screen and (max-width: 640px)
       display none

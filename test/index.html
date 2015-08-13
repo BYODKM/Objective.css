@@ -8,6 +8,7 @@
 .Page {
   position: relative;
   margin: 0;
+  color: #222;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.25;
   -webkit-text-size-adjust: 100%;
@@ -30,47 +31,12 @@
   font-size: 1.875rem;
 }
 .Page .Page__expand-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   position: absolute;
   top: 1.2rem;
   right: 1rem;
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  padding: 0 0.75em;
-  margin: 0;
-  height: 2em;
-  overflow: visible;
+  border-color: #fff;
   color: #fff;
-  font: inherit;
-  font-size: 0.938rem;
   background: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-decoration: none;
-  text-transform: none;
-  line-height: 1.9;
-  vertical-align: middle;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-}
-.Page .Page__expand-button:active,
-.Page .Page__expand-button:hover,
-.Page .Page__expand-button:focus {
-  outline: 0;
-}
-.Page .Page__expand-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
 }
 @media only screen and (max-width: 640px) {
   .Page .Page__expand-button {
@@ -229,6 +195,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  position: relative;
   display: inline-block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -241,8 +208,8 @@
   overflow: visible;
   color: #333;
   font: inherit;
-  font-family: sans-serif;
-  font-size: 15px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.938rem;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -325,7 +292,7 @@
   background-color: #c0c0c0;
 }
 .row--media-action .row--media-action__desc {
-  font-size: 15px;
+  font-size: 0.938rem;
   text-align: left;
   line-height: 1.5;
 }
@@ -384,4 +351,4 @@
   };
 
 }).call(this);
-</script></head><body class="Page"><header class="Page__header"><h1 class="Page__header-title">Objective.css Style Guide</h1><button onclick="expand()" class="Page__expand-button">Expand</button></header><section id="Button" class="Test"><script>include('Button');</script><div class="Test__jade"><p><button type="button" class="Button">Default</button></p><p><button type="button" class="Button button--submit">Submit</button></p><p><button type="button" class="Button button--cancel">Cancel</button></p></div></section><section id="Row" class="Test"><script>include('Row');</script><div class="Test__jade"><div class="Row row--media-action param--collapse-on-phone"><div class="Row__auto"><img src="" alt="" class="row--media-action__thumb"></div><div class="Row__full"><p class="row--media-action__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="Row__auto"><button type="button" class="Button">Action</button></div></div></div></section><footer class="Page__footer"><a href="https://github.com/BYODKM/Objective.css" class="Page__footer-link">Back to GitHub</a></footer><script src="prism.js"></script></body></html>
+</script></head><body class="Page"><header class="Page__header"><h1 class="Page__header-title">Objective.css Style Guide</h1><button onclick="expand()" class="Button Page__expand-button">Expand</button></header><section id="Button" class="Test"><script>include('Button');</script><div class="Test__jade"><p><button type="button" class="Button">Default</button></p><p><button type="button" class="Button button--submit">Submit</button></p><p><button type="button" class="Button button--cancel">Cancel</button></p></div></section><section id="Row" class="Test"><script>include('Row');</script><div class="Test__jade"><div class="Row row--media-action param--collapse-on-phone"><div class="Row__auto"><img src="" alt="" class="row--media-action__thumb"></div><div class="Row__full"><p class="row--media-action__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="Row__auto"><button type="button" class="Button">Action</button></div></div></div></section><footer class="Page__footer"><a href="https://github.com/BYODKM/Objective.css/tree/master/test/lib" class="Page__footer-link">Back to GitHub</a></footer><script src="prism.js"></script></body></html>
