@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"/><title>Objective.css Style Guide</title><style>@charset "utf-8";
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url("//themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff") format("woff");
+}
+.Page {
+  position: relative;
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.Page.param--expand .Page__header-title {
+  max-width: none;
+}
+.Page .Page__header {
+  overflow: hidden;
+  background-color: #222;
+}
+.Page .Page__header-title {
+  margin: 0.5em auto;
+  padding-left: 1rem;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.875rem;
+}
+.Page .Page__expand-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 0 0.75em;
+  margin: 0;
+  height: 2em;
+  overflow: visible;
+  color: #fff;
+  font: inherit;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.938rem;
+  background: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  text-transform: none;
+  line-height: 1.9;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.Page .Page__expand-button:active,
+.Page .Page__expand-button:hover,
+.Page .Page__expand-button:focus {
+  outline: 0;
+}
+.Page .Page__expand-button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+@media only screen and (max-width: 640px) {
+  .Page .Page__expand-button {
+    display: none;
+  }
+}
+.Page .Page__footer {
+  padding: 1em 0;
+  height: 1.25em;
+  font-size: 0.875rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.Page .Page__footer-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 1em 0;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  text-indent: -1px;
+  letter-spacing: 1px;
+  background-color: #222;
+}
+.Page .Page__footer-link:hover {
+  text-decoration: underline;
+}
+.Test {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  max-width: 640px;
+}
+.Test.param--expand {
+  max-width: none;
+}
+.Test .Test__name {
+  margin: 2rem 0 0;
+  color: #c0c0c0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.875rem;
+}
+.Test .Test__anchor {
+  position: relative;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.Test .Test__anchor:before {
+  content: '#';
+  position: absolute;
+  top: 0;
+  left: -0.8em;
+  display: inline-block;
+  width: 0.8em;
+  color: transparent;
+}
+@media only screen and (max-width: 640px) {
+  .Test .Test__anchor:before {
+    display: none;
+  }
+}
+.Test .Test__anchor:hover:before {
+  color: currentColor;
+}
+.Test .Test__pre {
+  margin: 1rem 0 0;
+  padding: 0.9rem 0 1.1rem 1rem;
+  border-radius: 4px 4px 0 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  color: #fff;
+  font-family: monospace, monospace;
+  font-size: 0.813rem;
+  background-color: #222;
+}
+.Test .Test__code {
+  font-family: Monaco, "Lucida Console", monospace;
+  font-size: 1em;
+  line-height: 1.5;
+}
+.Test .Test__code .comment,
+.Test .Test__code .prolog,
+.Test .Test__code .doctype,
+.Test .Test__code .cdata {
+  color: #708090;
+}
+.Test .Test__code .punctuation {
+  color: #f8f8f2;
+}
+.Test .Test__code .namespace {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+  opacity: 0.7;
+}
+.Test .Test__code .property,
+.Test .Test__code .tag,
+.Test .Test__code .constant,
+.Test .Test__code .symbol,
+.Test .Test__code .deleted {
+  color: #ee63b4;
+}
+.Test .Test__code .boolean,
+.Test .Test__code .number {
+  color: #ae81ff;
+}
+.Test .Test__code .selector,
+.Test .Test__code .attr-name,
+.Test .Test__code .string,
+.Test .Test__code .char,
+.Test .Test__code .builtin,
+.Test .Test__code .inserted {
+  color: #a6e22e;
+}
+.Test .Test__code .operator,
+.Test .Test__code .entity,
+.Test .Test__code .url,
+.Test .Test__code .variable {
+  color: #f8f8f2;
+}
+.Test .Test__code .atrule,
+.Test .Test__code .attr-value,
+.Test .Test__code .function {
+  color: #e6db74;
+}
+.Test .Test__code .keyword {
+  color: #66d9ef;
+}
+.Test .Test__code .regex,
+.Test .Test__code .important {
+  color: #fd971f;
+}
+.Test .Test__code .important,
+.Test .Test__code .bold {
+  font-weight: bold;
+}
+.Test .Test__code .italic {
+  font-style: italic;
+}
+.Test .Test__code .entity {
+  cursor: help;
+}
+.Test .Test__jade {
+  margin: 0 0 2rem;
+  padding: 1rem;
+  border: 1px solid #222;
+  border-radius: 0 0 4px 4px;
+}
+.Test .Test__jade p:first-of-type {
+  margin-top: 0;
+}
+.Test .Test__jade p:last-of-type {
+  margin-bottom: 0;
+}
+.Button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #666;
+  border-radius: 5px;
+  padding: 0 0.75em;
+  margin: 0;
+  height: 2em;
+  overflow: visible;
+  color: #333;
+  font: inherit;
+  font-family: sans-serif;
+  font-size: 15px;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  text-transform: none;
+  line-height: 1.9;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.Button:active,
+.Button:hover,
+.Button:focus {
+  outline: 0;
+}
+.Button[disabled] {
+  cursor: default;
+}
+.Button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.button--submit {
+  color: #fff;
+  background-color: #008000;
+  border-color: transparent;
+}
+.button--cancel {
+  color: #fff;
+  background-color: #f00;
+  border-color: transparent;
+}
+.Row {
+  display: table;
+  width: 100%;
+  vertical-align: middle;
+}
+@media only screen and (max-width: 410px) {
+  .Row.param--collapse-on-phone {
+    display: block;
+    vertical-align: top;
+  }
+  .Row.param--collapse-on-phone > .Row__full,
+  .Row.param--collapse-on-phone > .Row__auto {
+    display: block;
+    padding-top: 1rem;
+    padding-left: 0;
+  }
+  .Row.param--collapse-on-phone > .Row__full:first-of-type,
+  .Row.param--collapse-on-phone > .Row__auto:first-of-type {
+    padding-top: 0;
+  }
+}
+.Row .Row__full,
+.Row .Row__auto {
+  display: table-cell;
+  padding-left: 1rem;
+  vertical-align: inherit;
+}
+.Row .Row__full:first-of-type,
+.Row .Row__auto:first-of-type {
+  padding-left: 0;
+}
+.Row .Row__full {
+  width: 100%;
+}
+.row--media-action {
+  text-align: center;
+}
+.row--media-action .row--media-action__thumb {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  vertical-align: top;
+  background-color: #c0c0c0;
+}
+.row--media-action .row--media-action__desc {
+  font-size: 15px;
+  text-align: left;
+  line-height: 1.5;
+}
+</style><script>(function() {
+  window.include = function(str) {
+    var a, check, code, h1, http, path, pre, scope;
+    scope = document.querySelector('#' + str);
+    if (!scope) {
+      return;
+    }
+    pre = document.createElement('pre');
+    pre.className = 'Test__pre';
+    code = document.createElement('code');
+    code.className = 'Test__code language-jade';
+    pre.appendChild(code);
+    scope.insertBefore(pre, scope.firstChild);
+    h1 = document.createElement('h1');
+    h1.className = 'Test__name';
+    a = document.createElement('a');
+    a.className = 'Test__anchor';
+    a.setAttribute('href', '#' + str);
+    a.innerHTML = '.' + str;
+    h1.appendChild(a);
+    scope.insertBefore(h1, scope.firstChild);
+    http = new XMLHttpRequest();
+    path = './lib/' + str + '/code.jade';
+    code = scope.querySelector('code');
+    check = function() {
+      if (http.readyState === 4 && http.status === 200) {
+        code.innerHTML = http.responseText;
+      }
+    };
+    http.addEventListener('readystatechange', check, false);
+    http.open('GET', path, true);
+    http.send(null);
+  };
+
+  window.expand = function() {
+    var classes, existingIndex, i, node, nodes, toggleClass;
+    nodes = document.querySelectorAll('.Test');
+    if (!nodes.length) {
+      return;
+    }
+    toggleClass = 'param--expand';
+    for (i = nodes.length - 1; i >= 0; i += -1) {
+      node = nodes[i];
+      classes = node.className.split(' ');
+      existingIndex = classes.indexOf(toggleClass);
+      if (existingIndex >= 0) {
+        classes.splice(existingIndex, 1);
+      } else {
+        classes.push(toggleClass);
+      }
+      node.className = classes.join(' ');
+    }
+  };
+
+}).call(this);
+</script></head><body class="Page"><header class="Page__header"><h1 class="Page__header-title">Objective.css Style Guide</h1><button onclick="expand()" class="Page__expand-button">Expand</button></header><section id="Button" class="Test"><script>include('Button');</script><div class="Test__jade"><p><button type="button" class="Button">Default</button></p><p><button type="button" class="Button button--submit">Submit</button></p><p><button type="button" class="Button button--cancel">Cancel</button></p></div></section><section id="Row" class="Test"><script>include('Row');</script><div class="Test__jade"><div class="Row row--media-action param--collapse-on-phone"><div class="Row__auto"><img src="" alt="" class="row--media-action__thumb"></div><div class="Row__full"><p class="row--media-action__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="Row__auto"><button type="button" class="Button">Action</button></div></div></div></section><footer class="Page__footer"><a href="https://github.com/BYODKM/Objective.css" class="Page__footer-link">Back to GitHub</a></footer><script src="prism.js"></script></body></html>

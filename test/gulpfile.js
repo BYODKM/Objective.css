@@ -8,17 +8,18 @@ var webserver = require('gulp-webserver');
 
 var config = {
   plumber: {
-      errorHandler : notify.onError("Error: <%= error.message %>")
+    errorHandler : notify.onError("Error: <%= error.message %>")
   },
   jade: {
-    basedir : __dirname,
-    pretty  : false
+    basedir: __dirname,
+    pretty : false,
+    self   : true
   },
   webserver: {
-    livereload : true,
-    host       : '0.0.0.0',
-    open       : 'http://localhost:3000/',
-    port       : 3000
+    host      : '0.0.0.0',
+    livereload: true,
+    open      : 'http://localhost:3000/',
+    port      : 3000
   }
 };
 
@@ -29,13 +30,13 @@ gulp.task('jade', function() {
     .pipe(gulp.dest('.'));
 });
 
-gulp.task('webserver', function() {
+gulp.task('serve', ['jade'], function() {
   return gulp.src('.')
     .pipe(webserver(config.webserver));
 });
 
-gulp.task('watch', ['webserver'], function() {
+gulp.task('watch', ['serve'], function() {
   gulp.watch(['**/*.jade', '**/*.styl'], ['jade']);
 });
 
-gulp.task('default', ['jade', 'watch']);
+gulp.task('default', ['watch']);

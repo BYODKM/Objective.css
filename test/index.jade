@@ -1,0 +1,14 @@
+include main
+
+doctype
+html(lang="ja")
+  +head
+    :stylus
+      @import "kouto-swiss"
+      @import "./lib/Button"
+      @import "./lib/Row"
+  +body
+    +test("Button")
+      include ./lib/Button/code
+    +test("Row")
+      include ./lib/Row/code

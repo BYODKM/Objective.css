@@ -1,0 +1,90 @@
+mixin body
+
+  body&attributes(attributes).Page
+    header.Page__header
+      h1.Page__header-title Objective.css Style Guide
+      button.Page__expand-button(onclick="expand()") Expand
+    block
+    footer.Page__footer
+      a.Page__footer-link(href="https://github.com/BYODKM/Objective.css")
+        | Back to GitHub
+    script(src="prism.js")
+
+mixin test(str)
+
+  section.Test(id = str)
+    script.
+      include('#{str}');
+    .Test__jade
+      block
+
+mixin head
+
+  head&attributes(attributes)
+    meta(charset="utf-8")
+    title Objective.css Style Guide
+    style
+      :stylus
+        @import "main"
+      block
+    script
+      :coffee-script
+        window.include = (str)->
+
+          scope = document.querySelector('#' + str)
+          if (!scope) then return
+
+          pre = document.createElement('pre')
+          pre.className = 'Test__pre'
+
+          code = document.createElement('code')
+          code.className = 'Test__code language-jade'
+
+          pre.appendChild(code)
+          scope.insertBefore(pre, scope.firstChild)
+
+          h1 = document.createElement('h1')
+          h1.className = 'Test__name'
+
+          a = document.createElement('a')
+          a.className = 'Test__anchor'
+          a.setAttribute('href', '#' + str)
+          a.innerHTML = '.' + str
+
+          h1.appendChild(a)
+          scope.insertBefore(h1, scope.firstChild)
+
+          http = new XMLHttpRequest()
+          path = './lib/' + str + '/code.jade'
+          code = scope.querySelector('code')
+
+          check = ->
+            if (http.readyState is 4 and http.status is 200)
+              code.innerHTML = http.responseText
+            return
+
+          http.addEventListener('readystatechange', check, false)
+          http.open('GET', path, true)
+          http.send(null)
+
+          return
+
+        window.expand = ->
+
+          nodes = document.querySelectorAll('.Test')
+          if (!nodes.length) then return
+
+          toggleClass = 'param--expand'
+
+          for node in nodes by -1
+            classes = node.className.split(' ')
+            existingIndex = classes.indexOf(toggleClass)
+
+            if (existingIndex >= 0)
+              classes.splice(existingIndex, 1)
+            else
+              classes.push(toggleClass)
+
+            node.className = classes.join(' ')
+
+          return

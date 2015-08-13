@@ -1,10 +1,13 @@
 {
   "name": "Objective.css",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "True Object Oriented CSS Style Guide",
   "author": "Tomohiro Kasuga <tk@internets.co.jp>",
-  "license": "Public Domain",
+  "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "gulp"
+  },
   "devDependencies": {
     "coffee-script": "~1.9.3",
     "gulp": "~3.9.0",
