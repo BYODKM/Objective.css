@@ -23,10 +23,13 @@ So, let's get started!
   display: inline-block
   box-sizing: border-box
   border: 1px solid
-  border-radius: 4px
-  height: 2em
+  border-radius: 5px
   padding: 0 0.75em
+  margin: 0
+  height: 2em
+  overflow: visible
   color: inherit
+  font-size: 15px
   background-color: white
   text-decoration: none
   line-height: 1.9
