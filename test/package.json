@@ -1,6 +1,6 @@
 {
   "name": "Objective.css",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "True Object Oriented CSS Style Guide",
   "author": "Tomohiro Kasuga <tk@internets.co.jp>",
   "license": "MIT",
@@ -9,7 +9,6 @@
     "start": "gulp"
   },
   "devDependencies": {
-    "coffee-script": "~1.9.3",
     "gulp": "~3.9.0",
     "gulp-jade": "~1.1.0",
     "gulp-notify": "~2.2.0",
@@ -17,6 +16,7 @@
     "gulp-webserver": "~0.9.1",
     "jstransformer-coffee-script": "~1.0.0",
     "jstransformer-stylus": "~1.0.0",
+    "jstransformer-uglify-js": "0.0.4",
     "kouto-swiss": "~0.11.13",
     "stylus": "~0.52.0"
   }

@@ -105,20 +105,32 @@
       color currentColor
 
   & &__pre
+    position relative
     margin 1rem 0 0
-    padding 0.9rem 0 1.1rem 1rem
+    font-family monospace, monospace
+    font-size 1em
+
+  & &__code
+    display block
+    padding 1rem 0 1rem 1rem
     border-radius 4px 4px 0 0
     overflow-x auto
     overflow-y hidden
     color white
-    font-family monospace, monospace
+    font-family Monaco, Menlo, "Lucida Console", monospace
     font-size rem(13px)
+    line-height 1.5
     background-color #222
 
-  & &__code
-    font-family Monaco, Menlo, "Lucida Console", monospace
-    font-size 1em
-    line-height 1.5
+    &:before
+      content "Jade"
+      position absolute
+      top 0.5rem
+      right 0.5rem
+      display inline-block
+      padding 0 0.5em
+      border-radius 4px
+      background-color rgba(white, 0.25)
 
     .comment
     .prolog

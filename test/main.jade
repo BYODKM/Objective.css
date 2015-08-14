@@ -8,7 +8,7 @@ mixin body
     footer.Page__footer
       a.Page__footer-link(href="https://github.com/BYODKM/Objective.css/tree/master/test/lib")
         | Back to GitHub
-    script(src="prism.js")
+    script(src="prism.js" defer)
 
 mixin test(str)
 
@@ -29,63 +29,74 @@ mixin head
         @import "main"
       block
     script
-      :coffee-script
-        window.include = (str)->
+      :uglify-js
+        window.include = function(str) {
 
-          scope = document.querySelector('#' + str)
-          if (!scope) then return
+          var $ = {
+            a    : document.createElement('a'),
+            code : document.createElement('code'),
+            h1   : document.createElement('h1'),
+            pre  : document.createElement('pre'),
+            scope: document.querySelector('#' + str)
+          };
 
-          pre = document.createElement('pre')
-          pre.className = 'Test__pre'
+          if (!$.scope) {
+            return;
+          }
 
-          code = document.createElement('code')
-          code.className = 'Test__code language-jade'
+          $.a.className    = 'Test__anchor';
+          $.code.className = 'Test__code language-jade';
+          $.h1.className   = 'Test__name';
+          $.pre.className  = 'Test__pre';
 
-          pre.appendChild(code)
-          scope.insertBefore(pre, scope.firstChild)
+          $.a.setAttribute('href', '#' + str);
+          $.a.innerHTML = '.' + str;
 
-          h1 = document.createElement('h1')
-          h1.className = 'Test__name'
+          $.pre.appendChild($.code);
+          $.scope.insertBefore($.pre, $.scope.firstChild);
 
-          a = document.createElement('a')
-          a.className = 'Test__anchor'
-          a.setAttribute('href', '#' + str)
-          a.innerHTML = '.' + str
+          $.h1.appendChild($.a);
+          $.scope.insertBefore($.h1, $.scope.firstChild);
 
-          h1.appendChild(a)
-          scope.insertBefore(h1, scope.firstChild)
+          var http = new XMLHttpRequest();
+          var path = './lib/' + str + '/code.jade';
+          $.code = $.scope.querySelector('code');
 
-          http = new XMLHttpRequest()
-          path = './lib/' + str + '/code.jade'
-          code = scope.querySelector('code')
+          var check = function() {
+            if (http.readyState === 4 && http.status === 200) {
+              $.code.innerHTML = http.responseText;
+            }
+          };
 
-          check = ->
-            if (http.readyState is 4 and http.status is 200)
-              code.innerHTML = http.responseText
-            return
+          http.addEventListener('readystatechange', check, false);
+          http.open('GET', path, true);
+          http.send(null);
 
-          http.addEventListener('readystatechange', check, false)
-          http.open('GET', path, true)
-          http.send(null)
+        };
 
-          return
+        window.expand = function() {
 
-        window.expand = ->
+          var $nodes = document.querySelectorAll('.Test');
 
-          nodes = document.querySelectorAll('.Test')
-          if (!nodes.length) then return
+          if (!$nodes.length) {
+            return;
+          }
 
-          toggleClass = 'param--expand'
+          var toggleClass = 'param--expand';
 
-          for node in nodes by -1
-            classes = node.className.split(' ')
-            existingIndex = classes.indexOf(toggleClass)
+          for (var i = $nodes.length - 1; i >= 0; i += -1) {
 
-            if (existingIndex >= 0)
-              classes.splice(existingIndex, 1)
-            else
-              classes.push(toggleClass)
+            var $node = $nodes[i];
+            var classNames = $node.className.split(' ');
+            var existingIndex = classNames.indexOf(toggleClass);
 
-            node.className = classes.join(' ')
+            if (existingIndex >= 0) {
+              classNames.splice(existingIndex, 1);
+            } else {
+              classNames.push(toggleClass);
+            }
 
-          return
+            $node.className = classNames.join(' ');
+
+          };
+        };
