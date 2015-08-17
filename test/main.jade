@@ -58,19 +58,14 @@ mixin head
           $.h1.appendChild($.a);
           $.scope.insertBefore($.h1, $.scope.firstChild);
 
-          var http = new XMLHttpRequest();
+          var request = new XMLHttpRequest();
           var path = './lib/' + str + '/code.jade';
-          $.code = $.scope.querySelector('code');
 
-          var check = function() {
-            if (http.readyState === 4 && http.status === 200) {
-              $.code.innerHTML = http.responseText;
-            }
-          };
+          request.open('GET', path, false);
+          request.send();
 
-          http.addEventListener('readystatechange', check, false);
-          http.open('GET', path, true);
-          http.send(null);
+          $code = $.scope.querySelector('code');
+          $code.innerHTML = request.responseText;
 
         };
 
