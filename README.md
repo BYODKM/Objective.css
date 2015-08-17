@@ -129,10 +129,13 @@ The "OO" is _[metaphor](https://github.com/stubbornella/oocss/wiki/FAQ)_.
 ```html
 <div class="Popup">
   <div class="Popup__window">
-    <div class="Popup__message">
+    <div class="Popup__header">
+      <!-- Title Here -->
+    </div>
+    <div class="Popup__body">
       <!-- Messages Here -->
     </div>
-    <div class="Popup__action">
+    <div class="Popup__footer">
       <!-- Buttons Here -->
     </div>
   </div>
@@ -147,19 +150,27 @@ These child elements are part of structure. It will be inherited in your markup.
 .Popup
 
   & &__window
-    width: 300px
     position: fixed
     top: 33%
     left: 50%
     margin-left: -150px
+    width: 300px
     border-radius: 8px
+    overflow: hidden
     background-color: white
+    box-shadow: 0 5px 20px rgba(black, 0.5)
 
-  & &__message
-    padding: 1rem
+  & &__header
+    padding: 0.75rem 0.5rem 0
+    text-align: center
+    font-weight: bold
 
-  & &__action
-    padding: 0.5rem
+  & &__body
+    padding: 1rem 0.5rem
+    line-height: 1.5
+
+  & &__footer
+    padding: 0.75rem 0.5rem
     border-top: 1px solid $gray
     text-align: center
 ```
@@ -167,13 +178,16 @@ These child elements are part of structure. It will be inherited in your markup.
 ### 7.2 Instantiate
 
 ```html
-<div class="Popup popup--confirm">
+<div class="Popup popup--simple-confirm">
   <div class="Popup__window">
-    <div class="Popup__message">
-      <p class="popup--confirm__message">Send a message for you.</p>
+    <div class="Popup__header">
+      Information
     </div>
-    <div class="Popup__action">
-      <button class="Button button--close-popup" type="button">Close</button>
+    <div class="Popup__body">
+      <p class="popup--simple-confirm__message">Send a message to your inbox.</p>
+    </div>
+    <div class="Popup__footer">
+      <button class="Button button--tint" type="button">Close</button>
     </div>
   </div>
 </div >
@@ -182,7 +196,7 @@ These child elements are part of structure. It will be inherited in your markup.
 ### 7.3 Add instance properties
 
 ```sass
-.popup--confirm
+.popup--simple-confirm
 
   & &__message
     text-align: center
@@ -195,22 +209,25 @@ The same as the `.Button` so far.
 ### 8.1 Wrong way
 
 ```html
-<div class="Popup popup--confirm">
+<div class="Popup popup--simple-confirm">
   <div class="Popup__window">
-    <div class="Popup__message">
-      <p class="popup--confirm__message">Send a message for you.</p>
+    <div class="Popup__header">
+      <!-- This case, no title. -->
     </div>
-    <div class="Popup__action">
-      <!-- This case, no buttons. -->
+    <div class="Popup__body">
+      <p class="popup--simple-confirm__message">Send a message to your inbox.</p>
+    </div>
+    <div class="Popup__footer">
+      <button class="Button button--tint" type="button">Close</button>
     </div>
   </div>
 </div >
 ```
 
 ```sass
-.popup--confirm
+.popup--simple-confirm
 
-  .Popup__action
+  .Popup__header
     display: none
 ```
 
@@ -221,13 +238,16 @@ The code above is manipulating parent class's child element from a instance. It 
 Use parameters as a bridge.
 
 ```html
-<div class="Popup popup--confirm param--auto-close"><!-- Added parameters here -->
+<div class="Popup popup--simple-confirm param--no-title"><!-- Added parameters here -->
   <div class="Popup__window">
-    <div class="Popup__message">
-      <p class="popup--confirm__message">Send a message for you.</p>
+    <div class="Popup__header">
+      <!-- This case, no title. -->
     </div>
-    <div class="Popup__action">
-      <!-- This case, no buttons. -->
+    <div class="Popup__body">
+      <p class="popup--simple-confirm__message">Send a message to your inbox.</p>
+    </div>
+    <div class="Popup__footer">
+      <button class="Button button--tint" type="button">Close</button>
     </div>
   </div>
 </div >
@@ -236,9 +256,9 @@ Use parameters as a bridge.
 ```sass
 .Popup
 
-  &.param--auto-close
+  &.param--no-title
 
-    .Popup__action
+    .Popup__header
       display: none
 ```
 

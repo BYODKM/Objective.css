@@ -21,12 +21,12 @@
 }
 .Page .Page__header {
   overflow: hidden;
+  color: #fff;
   background-color: #222;
 }
 .Page .Page__header-title {
   margin: 0.5em auto;
   padding-left: 1rem;
-  color: #fff;
   font-family: "Open Sans", sans-serif;
   font-size: 1.875rem;
 }
@@ -34,9 +34,6 @@
   position: absolute;
   top: 1.2rem;
   right: 1rem;
-  border-color: #fff;
-  color: #fff;
-  background: none;
 }
 @media only screen and (max-width: 668px) {
   .Page .Page__expand-button {
@@ -192,6 +189,7 @@
   cursor: help;
 }
 .Test .Test__jade {
+  position: relative;
   margin: 0 0 2rem;
   padding: 1rem;
   border: 1px solid #222;
@@ -258,6 +256,56 @@
   background-color: #f00;
   border-color: transparent;
 }
+.button--outline {
+  background-color: transparent;
+}
+.button--tint {
+  color: #00f;
+  border-color: transparent;
+}
+.Popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.Popup.param--no-title .Popup__header {
+  display: none;
+}
+.Popup .Popup__window {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -143px;
+  border-radius: 8px;
+  width: 286px;
+  overflow: hidden;
+  background-color: #fff;
+  -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+.Popup .Popup__header {
+  padding: 0.75rem 0.5rem 0;
+  text-align: center;
+  font-weight: bold;
+}
+.Popup .Popup__body {
+  padding: 1rem 0.5rem;
+  line-height: 1.5;
+}
+.Popup .Popup__footer {
+  padding: 0.75rem 0.5rem;
+  border-top: 1px solid #c0c0c0;
+  text-align: center;
+}
+.popup--demo {
+  position: relative;
+  height: 200px;
+}
+.popup--demo .popup--demo__message {
+  text-align: center;
+}
 .Row {
   display: table;
   width: 100%;
@@ -308,4 +356,4 @@
   text-align: left;
   line-height: 1.5;
 }
-</style><script>window.include=function(e){var c={a:document.createElement("a"),code:document.createElement("code"),h1:document.createElement("h1"),pre:document.createElement("pre"),scope:document.querySelector("#"+e)};if(c.scope){c.a.className="Test__anchor",c.code.className="Test__code language-jade",c.h1.className="Test__name",c.pre.className="Test__pre",c.a.setAttribute("href","#"+e),c.a.innerHTML="."+e,c.pre.appendChild(c.code),c.scope.insertBefore(c.pre,c.scope.firstChild),c.h1.appendChild(c.a),c.scope.insertBefore(c.h1,c.scope.firstChild);var a=new XMLHttpRequest,t="./lib/"+e+"/code.jade";a.open("GET",t,!1),a.send(),$code=c.scope.querySelector("code"),$code.innerHTML=a.responseText}},window.expand=function(){var e=document.querySelectorAll(".Test");if(e.length)for(var c="param--expand",a=e.length-1;a>=0;a+=-1){var t=e[a],n=t.className.split(" "),o=n.indexOf(c);o>=0?n.splice(o,1):n.push(c),t.className=n.join(" ")}};</script></head><body class="Page"><header class="Page__header"><h1 class="Page__header-title">Objective.css Style Guide</h1><button onclick="expand()" class="Button Page__expand-button">Expand</button></header><section id="Button" class="Test"><script>include('Button');</script><div class="Test__jade"><p><button type="button" class="Button">Default</button></p><p><button type="button" class="Button button--submit">Submit</button></p><p><button type="button" class="Button button--cancel">Cancel</button></p></div></section><section id="Row" class="Test"><script>include('Row');</script><div class="Test__jade"><div class="Row row--media-action param--collapse-on-phone"><div class="Row__auto"><img src="" alt="" class="row--media-action__thumb"></div><div class="Row__full"><p class="row--media-action__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="Row__auto"><button type="button" class="Button">Action</button></div></div></div></section><footer class="Page__footer"><a href="https://github.com/BYODKM/Objective.css/tree/master/test/lib" class="Page__footer-link">Back to GitHub</a></footer><script src="prism.js" defer="defer"></script></body></html>
+</style><script>window.include=function(e){var c={a:document.createElement("a"),code:document.createElement("code"),h1:document.createElement("h1"),pre:document.createElement("pre"),scope:document.querySelector("#"+e)};if(c.scope){c.a.className="Test__anchor",c.code.className="Test__code language-jade",c.h1.className="Test__name",c.pre.className="Test__pre",c.a.setAttribute("href","#"+e),c.a.innerHTML="."+e,c.pre.appendChild(c.code),c.scope.insertBefore(c.pre,c.scope.firstChild),c.h1.appendChild(c.a),c.scope.insertBefore(c.h1,c.scope.firstChild);var a=new XMLHttpRequest,t="./lib/"+e+"/code.jade";a.open("GET",t,!1),a.send(),$code=c.scope.querySelector("code"),$code.innerHTML=a.responseText}},window.expand=function(){var e=document.querySelectorAll(".Test");if(e.length)for(var c="param--expand",a=e.length-1;a>=0;a+=-1){var t=e[a],n=t.className.split(" "),o=n.indexOf(c);o>=0?n.splice(o,1):n.push(c),t.className=n.join(" ")}};</script></head><body class="Page"><header class="Page__header"><h1 class="Page__header-title">Objective.css Style Guide</h1><button onclick="expand()" class="Button button--outline Page__expand-button">Expand</button></header><section id="Button" class="Test"><script>include('Button');</script><div class="Test__jade"><p><button type="button" class="Button">Default</button></p><p><button type="button" class="Button button--submit">Submit</button></p><p><button type="button" class="Button button--cancel">Cancel</button></p></div></section><section id="Popup" class="Test"><script>include('Popup');</script><div class="Test__jade"><div class="Popup popup--demo param--no-title"><div class="Popup__window"><div class="Popup__header"></div><div class="Popup__body"><p class="popup--demo__message">Send a message to your inbox.</p></div><div class="Popup__footer"><button type="button" class="Button button--tint">Close</button></div></div></div></div></section><section id="Row" class="Test"><script>include('Row');</script><div class="Test__jade"><div class="Row row--media-action param--collapse-on-phone"><div class="Row__auto"><img src="" alt="" class="row--media-action__thumb"></div><div class="Row__full"><p class="row--media-action__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="Row__auto"><button type="button" class="Button">Action</button></div></div></div></section><footer class="Page__footer"><a href="https://github.com/BYODKM/Objective.css/tree/master/test/lib" class="Page__footer-link">Back to GitHub</a></footer><script src="prism.js"></script></body></html>

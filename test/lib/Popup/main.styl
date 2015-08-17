@@ -1,0 +1,35 @@
+.Popup
+  position fixed
+  top 0
+  left 0
+  size 100%
+
+  &.param--no-title
+
+    .Popup__header
+      display none
+
+  & &__window
+    position absolute
+    top 20%
+    left 50%
+    margin-left -143px
+    border-radius 8px
+    width 286px
+    overflow hidden
+    background-color white
+    box-shadow 0 5px 20px rgba(black, 0.5)
+
+  & &__header
+    padding 0.75rem 0.5rem 0
+    text-align center
+    font-weight bold
+
+  & &__body
+    padding 1rem 0.5rem
+    line-height 1.5
+
+  & &__footer
+    padding 0.75rem 0.5rem
+    border-top 1px solid silver
+    text-align center

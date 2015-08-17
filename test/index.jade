@@ -6,9 +6,12 @@ html(lang="ja")
     :stylus
       @import "kouto-swiss"
       @import "./lib/Button"
+      @import "./lib/Popup"
       @import "./lib/Row"
   +body
     +test("Button")
       include ./lib/Button/code
+    +test("Popup")
+      include ./lib/Popup/code
     +test("Row")
       include ./lib/Row/code
